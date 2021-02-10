@@ -14,26 +14,26 @@ function Books() {
   return (
     <Container fluid>
       <Row>
-        <Col size="md-10">
+        <Col size="md-12">
           <Jumbotron>
             <h1>React Google Books Search</h1>
-            <h3>Search for and Save Books of interests</h3>
+            <h4>Search for and Save Books of interests</h4>
           </Jumbotron>
           <Jumbotron>
-            <h2>Book Search</h2>
+            <h3 style={{textAlign: "left"}}>Book Search</h3>
             <form>
               <Input
-                onChange={handleInputChange}
+                // onChange={}
                 name="title"
                 placeholder="Please enter a book name"
               />
-              <FormBtn disabled={!formObject.author} onClick={handleFormSubmit}>
+              <FormBtn disabled={!formObject.author} >
                 Search
               </FormBtn>
             </form>
           </Jumbotron>
           <Jumbotron>
-              <h2>Results</h2>
+              <h3 style={{textAlign: "left"}}>Results</h3>
               {books.length ? (
             <List>
               {books.map((book) => (
@@ -43,7 +43,7 @@ function Books() {
                       {book.title} by {book.author}
                     </strong>
                   </Link>
-                  <DeleteBtn onClick={() => deleteBook(book._id)} />
+                  <DeleteBtn />
                 </ListItem>
               ))}
             </List>

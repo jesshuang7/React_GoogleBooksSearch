@@ -1,4 +1,4 @@
-
+/*
 const router = require("express").Router();
 const db = require("../../models");
 const axios = require("axios");
@@ -29,3 +29,5 @@ router.get("/google", (req, res) => {
 })
 
 module.exports = router;
+
+*/
