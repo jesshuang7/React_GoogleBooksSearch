@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
+import SaveBtn from "../components/SaveBtn";
 import Jumbotron from "../components/Jumbotron";
-
+import API from "../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { List, ListItem } from "../components/List";
@@ -9,7 +9,20 @@ import { Input, FormBtn } from "../components/Form";
 
 function Books() {
     const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({});
+  const [formObject, setFormObject] = useState("");
+
+
+  function handleInputChange(event) {
+    setFormObject(event.target.value)
+  };
+
+  function handleFormSubmit(event) {
+    event.preventDefault();
+    API.searchGoogle(formObject)
+    .then((response) => {
+        setBooks(response.data.items)
+    })
+  };
 
   return (
     <Container fluid>
@@ -23,11 +36,14 @@ function Books() {
             <h3 style={{textAlign: "left"}}>Book Search</h3>
             <form>
               <Input
-                // onChange={}
+                onChange={handleInputChange}
                 name="title"
                 placeholder="Please enter a book name"
               />
-              <FormBtn disabled={!formObject.author} >
+              <FormBtn 
+                // disabled={!formObject.author} 
+                onClick={handleFormSubmit}
+              >
                 Search
               </FormBtn>
             </form>
@@ -40,10 +56,10 @@ function Books() {
                 <ListItem key={book._id}>
                   <Link to={"/books/" + book._id}>
                     <strong>
-                      {book.title} by {book.author}
+                      {book.volumeInfo.title} by {book.volumeInfo.authors}
                     </strong>
                   </Link>
-                  <DeleteBtn />
+                  <SaveBtn book={book} />
                 </ListItem>
               ))}
             </List>
