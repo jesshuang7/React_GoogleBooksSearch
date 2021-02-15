@@ -7,9 +7,9 @@ function DeleteBtn(props) {
 
   
   return (
-    <span className="delete-btn" {...props} role="button" tabIndex="0"  >
+    <button className="delete-btn btn btn-primary" {...props} role="button" tabIndex="0"  >
       ✗
-    </span>
+    </button>
   );
 }
 

@@ -34,20 +34,22 @@ function Save() {
     <Row>
       <Col size="md-12">
         <Jumbotron>
+        <br />
           <h1>React Google Books Search</h1>
           <h4>Search for and Save Books of interests</h4>
         </Jumbotron>
         <Jumbotron>
         <h3 style={{textAlign: "left"}}>Saved Books</h3>
+        <br/>
         {books.length ? (
               <List>
                 {books.map(book => (
                   <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
+                    <h5><a className="text-left" href={book.link}>{book.title}</a></h5>
+                    <h6small>{book.subtitle}</h6small>
+                      <h6>{book.authors}</h6>
+                      <p>{book.description}</p>
+                      <img src={book.image} />
                     <DeleteBtn onClick={() => deleteBook(book._id)}/>
                   </ListItem>
                 ))}

@@ -30,11 +30,13 @@ function Books() {
       <Row>
         <Col size="md-12">
           <Jumbotron>
+            <br/>
             <h1>React Google Books Search</h1>
             <h4>Search for and Save Books of interests</h4>
           </Jumbotron>
           <Jumbotron>
             <h3 style={{textAlign: "left"}}>Book Search</h3>
+            <br />
             <form>
               <Input
                 onChange={handleInputChange}
@@ -51,15 +53,12 @@ function Books() {
           </Jumbotron>
           <Jumbotron>
               <h3 style={{textAlign: "left"}}>Results</h3>
+              <br />
               {books.length ? (
             <List>
               {books.map((book) => (
                 <ListItem key={book._id}>
-                  <Link to={"/books/" + book._id}>
-                    <h5 className="text-left" src={book.volumeInfo.infoLink}>{book.volumeInfo.title}</h5>
-                    {/* 
-                      {book.volumeInfo.infoLink} */}
-                  </Link>
+                      <h5><a className="text-left" href={book.volumeInfo.infoLink}>{book.volumeInfo.title}</a></h5>
                       <h6small>{book.volumeInfo.subtitle}</h6small>
                       <h6>{book.volumeInfo.authors}</h6>
                       <p>{book.volumeInfo.description}</p>
