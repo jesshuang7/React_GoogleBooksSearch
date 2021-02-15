@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import SaveBtn from "../components/SaveBtn";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
@@ -21,6 +21,7 @@ function Books() {
     API.searchGoogle(formObject)
     .then((response) => {
         setBooks(response.data.items)
+        // console.log(response)
     })
   };
 
@@ -55,10 +56,15 @@ function Books() {
               {books.map((book) => (
                 <ListItem key={book._id}>
                   <Link to={"/books/" + book._id}>
-                    <strong>
-                      {book.volumeInfo.title} by {book.volumeInfo.authors}
-                    </strong>
+                    <h5 className="text-left" src={book.volumeInfo.infoLink}>{book.volumeInfo.title}</h5>
+                    {/* 
+                      {book.volumeInfo.infoLink} */}
                   </Link>
+                      <h6small>{book.volumeInfo.subtitle}</h6small>
+                      <h6>{book.volumeInfo.authors}</h6>
+                      <p>{book.volumeInfo.description}</p>
+                      <img src={book.volumeInfo.imageLinks.thumbnail} />
+                 
                   <SaveBtn book={book} />
                 </ListItem>
               ))}

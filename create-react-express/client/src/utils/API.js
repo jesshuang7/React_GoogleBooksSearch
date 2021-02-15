@@ -23,3 +23,5 @@ export default {
     return axios.get(query);
   }
 };
+
+

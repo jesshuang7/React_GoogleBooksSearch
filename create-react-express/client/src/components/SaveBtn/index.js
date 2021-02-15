@@ -9,6 +9,7 @@ function SaveBtn(props) {
     function SaveNewBook(){
         const bookObject = {
             title: props.book.volumeInfo.title,
+            subtitle: props.book.volumeInfo.subtitle,
             authors: props.book.volumeInfo.authors,
             description: props.book.volumeInfo.description,
             image: props.book.volumeInfo.imageLinks.thumbnail,
