@@ -20,7 +20,7 @@ View the [Github-pages](https://jesshuang7.github.io/React_GoogleBooksSearch/)
 * [Acknowledgements](#acknowledgements)
 
 ## About the Project:
-The focus of this project was to create a employee directory with React. This project will break up the application's UI into components, manage component state, and respond to user events.
+The focus of this project was to create a new React-based Google Books Search app. It requires to create React components, work with helper/util functions, and utilize React lifecycle methods to query and display books based on user searches. Node, Express and MongoDB are also used so that users can save books to review or purchase later.
 
 
 ![Project Gif](/create-react-express/client/public/React_GoogleBooksSearch.gif)
@@ -28,12 +28,14 @@ The focus of this project was to create a employee directory with React. This pr
 ### User Story
 
 ```
-AS a user, I want to be able to view my entire employee directory at once so that I have quick access to their information.
+AS a user, I want to be able to search a book from google book database, so that I can view and save it to my list. 
+
+As a user, I want to be able to view my save list and delete books if I want. 
 
 ```
 
 ### Built With:
-* This app is build upon [react](https://reactjs.org/).
+* This app is build upon [react](https://reactjs.org/), [node](https://nodejs.org/en/docs/), [express](https://expressjs.com/), and [MongoDB](https://www.mongodb.com/).
 
 ## Getting Started:
 To get a local copy up and running follow the steps below.
