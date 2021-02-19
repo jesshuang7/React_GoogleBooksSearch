@@ -2,7 +2,7 @@
 
 Explore the [Project Page](https://github.com/jesshuang7/React_GoogleBooksSearch)
 
-View the [Github-pages](https://jesshuang7.github.io/React_GoogleBooksSearch/)
+View the [Heroku Deployment](https://google-search-books-react.herokuapp.com/)
 
 
 ## Table of Contents
